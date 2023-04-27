@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Cruds operation</title>
+</head>
+
+<body>
+  <div class="cruds">
+    <div class="container">
+      <div class="title text-center py-5">
+        <h3 class="h3 fs-1 fw-bold">Cruds</h3>
+        <p class="p text-black-50 fs-3">Product Management system</p>
+      </div>
+      <div class="inputs">
+        <input class="form-control" id="title" type="text" placeholder="Title" aria-label="default input example">
+        <div class="prices my-3">
+          <div class="row">
+            <div class="col-md-2 col-sm-12">
+              <input class="form-control mb-3 mt-3" id="price" type="number" placeholder="Price"
+                aria-label="default input example" onkeyup="getTotal()">
+            </div>
+            <div class="col-md-2 col-sm-12">
+              <input class="form-control mb-3 mt-3" id="taxes" type="number" placeholder="Taxes"
+                aria-label="default input example" onkeyup="getTotal()">
+            </div>
+            <div class="col-md-2 col-sm-12">
+              <input class="form-control mb-3 mt-3" id="ads" type="number" placeholder="Ads"
+                aria-label="default input example" onkeyup="getTotal()">
+            </div>
+            <div class="col-md-2 col-sm-12">
+              <input class="form-control mb-3 mt-3" id="discount" type="number" placeholder="Discount"
+                aria-label="default input example" onkeyup="getTotal()">
+            </div>
+            <div class="col-md-4 mb-md-3 mt-md-3">
+              <span class="fw-bold total" id="total"></span>
+            </div>
+          </div>
+        </div>
+        <input class="form-control mb-3" id="count" type="number" placeholder="Count"
+          aria-label="default input example">
+        <input class="form-control mb-3" id="category" type="text" placeholder="Category"
+          aria-label="default input example">
+        <button class="btn btn-success w-100 mb-3" id="submit" type="submit">Create</button>
+        <input class="form-control mb-3" id="search" type="search" placeholder="Search"
+          aria-label="default input example" onkeyup="searchProduct(this.value)">
+        <div class="search-btns">
+          <div class="row text-center">
+            <div class="col-md-6 mb-3"><button class="btn btn-primary w-100 mb-md-3" data-placeholder="Search By Title"
+                onclick="updateInputField(this.id)" id="search-title" type="button">Search By Title</button>
+            </div>
+            <div class="col-md-6 mb-5"><button class="btn btn-primary w-100 mb-md-3" onclick="updateInputField(this.id)"
+                id="search-category" type="button" data-placeholder="Search By Category">Search By Category</button>
+            </div>
+          </div>
+        </div>
+        <div class="delete-btn">
+        </div>
+      </div>
+      <table class="table table-striped text-center">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Price</th>
+            <th scope="col">Taxes</th>
+            <th scope="col">Ads</th>
+            <th scope="col">Discount</th>
+            <th scope="col">Total</th>
+            <th scope="col">Category</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
